@@ -4,6 +4,21 @@
 """
 Endicia integration
 """
+from trytond.pool import Pool
 from .company import *
 from .party import *
-from .stock import *
+#from .stock import *
+from .carrier import *
+from .sale import *
+
+
+def register():
+    Pool.register(
+        Company,
+        Address,
+        #ShipmentOut,
+        Carrier,
+        EndiciaMailclass,
+        Configuration,
+        Sale,
+        module='endicia_integration', type_='model')
