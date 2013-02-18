@@ -51,7 +51,7 @@ class Carrier:
         location = sale.warehouse.address
         if not location:
             self.raise_user_error('location_required')
-        line_weights = sale.get_line_weights()
+        line_weights = sale.get_line_weights_for_endicia()
         calculate_postage_request = CalculatingPostageAPI(
             mailclass = sale.endicia_mailclass.value,
             weightoz = sum(line_weights.values()),
@@ -78,4 +78,3 @@ class EndiciaMailclass(ModelSQL, ModelView):
         ('domestic', 'Domestic'),
         ('international', 'International'),
     ], 'Type', required=True, select=1)
-
