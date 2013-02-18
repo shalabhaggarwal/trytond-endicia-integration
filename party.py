@@ -76,8 +76,7 @@ class Address:
                 self.subdivision.code[3:] or None,
             ToPostalCode = self.zip or None,
             ToCountry = self.country and self.country.name or None,
-            ToCountryCode = self.country and \
-                self.country.code or None,
+            ToCountryCode = self.country and self.country.code or None,
             ToPhone = phone or None,
             ToEMail = self.party.email or None,
         )

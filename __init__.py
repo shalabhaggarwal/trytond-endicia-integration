@@ -21,4 +21,8 @@ def register():
         EndiciaMailclass,
         Configuration,
         Sale,
+        GenerateEndiciaLabelMessage,
         module='endicia_integration', type_='model')
+    Pool.register(
+        GenerateEndiciaLabel,
+        module='endicia_integration', type_='wizard')
